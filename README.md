@@ -49,16 +49,16 @@ nba_connect/
 ├── README.md
 └── manage.py
 
-# Estrutura Inicial do Projeto NBA Connect
+### Estrutura Inicial do Projeto NBA Connect
 
-# Requisitos (requirements.txt)
+### Requisitos (requirements.txt)
 django>=4.2
 djangorestframework
 django-environ
 psycopg2-binary
 requests
 
-# .gitignore
+### .gitignore
 __pycache__/
 *.pyc
 venv/
