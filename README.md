@@ -67,5 +67,3 @@ db.sqlite3
 /static/
 /media/
 
-# README.md
-
