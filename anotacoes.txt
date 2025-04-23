@@ -1,0 +1,40 @@
+curl -X POST http://localhost:8000/api/token/refresh/ ^
+  -H "Content-Type: application/json" ^
+  -d "{\"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NDU2ODk3OCwiaWF0IjoxNzQ0NDgyNTc4LCJqdGkiOiIwM2YwMjY3OGYyMzQ0OTUxYTE3ZmRhMTAwZjNhZTc4YSIsInVzZXJfaWQiOjF9.WJsNQShL7QN3yNQ1-sM8ZUJGdyjsJKany5qVAL8wMFI\"}"
+
+
+curl -X POST http://localhost:8000/api/token/ -H "Content-Type: application/json" -d "{\"username\": \"euknicc\", \"password\": \"Ni110202@\"}"
+
+{"refresh":"
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NDU3MDQxOSwiaWF0IjoxNzQ0NDg0MDE5LCJqdGkiOiI0NDQyMTI5MzVlNWM0ZGY5ODA1ZDIzODljZTc4MWI1MiIsInVzZXJfaWQiOjF9.BlNPpvfzyryQaSQtts_QWO_5w1R2fUJudRRQQrGXLgw
+","access":"
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0NDg0MzE5LCJpYXQiOjE3NDQ0ODQwMTksImp0aSI6IjNkZDU3NGUyODFlYzRjY2FhNzFiY2RkMGI1M2E1ZjNlIiwidXNlcl9pZCI6MX0.DAmJtw53X8kAQxh1iO33KFPqCmSIKRUMsLBuTRNSA1s
+"}
+
+
+curl -X POST http://localhost:8000/api/users/profile/ -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0NDg0MzE5LCJpYXQiOjE3NDQ0ODQwMTksImp0aSI6IjNkZDU3NGUyODFlYzRjY2FhNzFiY2RkMGI1M2E1ZjNlIiwidXNlcl9pZCI6MX0.DAmJtw53X8kAQxh1iO33KFPqCmSIKRUMsLBuTRNSA1s" -H "Content-Type: application/json" -d "{\"bio\": \"Sou um fã da NBA!\", \"favorite_team\": \"Lakers\"}"
+
+
+
+
+# REFRESH DO TOKEN
+curl -X POST http://localhost:8000/api/token/refresh/ -H "Content-Type: application/json" -d "{\"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NDU3MDQxOSwiaWF0IjoxNzQ0NDg0MDE5LCJqdGkiOiI0NDQyMTI5MzVlNWM0ZGY5ODA1ZDIzODljZTc4MWI1MiIsInVzZXJfaWQiOjF9.BlNPpvfzyryQaSQtts_QWO_5w1R2fUJudRRQQrGXLgw"}"
+
+# GET 
+curl -X GET http://localhost:8000/api/users/profile/ -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0NDg0ODM3LCJpYXQiOjE3NDQ0ODQwMTksImp0aSI6ImQ3YzUxZTdhNTZhODQ0ODg5ODJjOTZjYmNmMTdiZTMxIiwidXNlcl9pZCI6MX0.c09giJT3_A4CO2EXMdwz67_yT0kT1SD_ymOrkWn9qfQ"
+
+
+curl -X POST http://localhost:8000/api/users/profile/ -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0NDg1NTE0LCJpYXQiOjE3NDQ0ODQwMTksImp0aSI6ImZmYmZkYzI3ODkwODQ3MDM4ODViN2FlOTQ2MmE1NWI2IiwidXNlcl9pZCI6MX0.ngcdU_YBi_KTpelDsElj65-TSWWRIaTlJ2RrSwJ4dC8" -H "Content-Type: application/json" -d "{\"bio\": \"Sou um fã da NBA!\", \"fav_team\": \"Lakers\"}"
+
+
+from django.contrib.auth.models import User
+from users.models import UserProfile
+
+# Crie o perfil para esse usuário
+profile = UserProfile.objects.create(user=user, bio='Bio do novo usuário', fav_team='Lakers')
+
+
+curl -X POST http://localhost:8000/api/users/profile/ -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0NDg2NDQ2LCJpYXQiOjE3NDQ0ODYxNDYsImp0aSI6ImJkMjFlYWNhNGM3NjRhODc4MzU2MjM2YmNhNWMwYTQ0IiwidXNlcl9pZCI6MX0.lp1y85pQa1dp3QKqK5SbQ5ybjrufR7D08MnqX7QdXiM" -H "Content-Type: application/json" -d "{\"bio\": \"Sou um fã da NBA!\", \"favorite_team\": \"Lakers\"}"
+
+
+curl -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ0NDg2NDQ2LCJpYXQiOjE3NDQ0ODYxNDYsImp0aSI6ImJkMjFlYWNhNGM3NjRhODc4MzU2MjM2YmNhNWMwYTQ0IiwidXNlcl9pZCI6MX0.lp1y85pQa1dp3QKqK5SbQ5ybjrufR7D08MnqX7QdXiM" http://localhost:8000/api/users/profile

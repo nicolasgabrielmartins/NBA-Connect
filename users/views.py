@@ -1,21 +1,28 @@
-from rest_framework import generics
-from django.contrib.auth.models import User
-from rest_framework.serializers import ModelSerializer
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
+from .forms import CustomUserCreationForm
 
-class RegisterSerializer(ModelSerializer):
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'password']
-        extra_kwargs = {'password': {'write_only': True}}
+@login_required
+def profile_page(request):
+    return render(request, 'users/profile.html', {
+        'user': request.user,
+        'profile': request.user.userprofile
+        })
+    
 
-    def create(self, validated_data):
-        user = User.objects.create_user(
-            username=validated_data['username'],
-            email=validated_data['email'],
-            password=validated_data['password']
-        )
-        return user
-
-class RegisterView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = RegisterSerializer
+def register_view(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST, request.FILES)
+        if form.is_valid():
+            user = form.save()
+            avatar = form.cleaned_data.get('avatar')
+            if avatar:
+                profile = user.userprofile
+                profile.avatar = avatar
+                profile.save()
+            login(request, user)
+            return redirect('profile-page')
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'users/register.html', {'form': form})
