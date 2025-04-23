@@ -1,0 +1,24 @@
+{% extends "master.html" %}
+{% block title %} Pagina Principal {% endblock title%}
+{% block content %}
+<h1>Detalhes do Jogador</h1>
+  <p><strong>Nome:</strong> {{ jogador.first_name }} {{ jogador.last_name }}</p>
+  <p><strong>Posição:</strong> {{ jogador.position }}</p>
+  <p><strong>Altura:</strong> {{ jogador.height }}</p>
+  <p><strong>Peso:</strong> {{ jogador.weight }}lb</p>
+  <p><strong>Camisa Nº:</strong> {{ jogador.jersey_number }}</p>
+  <p><strong>Faculdade:</strong> {{ jogador.college }}</p>
+  <p><strong>País:</strong> {{ jogador.country }}</p>
+  <p><strong>Ano do Draft:</strong> {{ jogador.draft_year }}</p>
+  <p><strong>Rodada do Draft:</strong> {{ jogador.draft_round }}</p>
+  <p><strong>Escolha do Draft:</strong> {{ jogador.draft_number }}</p>
+
+  <h2>Time</h2>
+  <p><strong>Nome Completo:</strong> {{ jogador.team.full_name }}</p>
+  <p><strong>Abreviação:</strong> {{ jogador.team.abbreviation }}</p>
+  <p><strong>Cidade:</strong> {{ jogador.team.city }}</p>
+  <p><strong>Conferência:</strong> {{ jogador.team.conference }}</p>
+  <p><strong>Divisão:</strong> {{ jogador.team.division }}</p
+        <footer> Back to <a href="/app">Players</a></footer>
+
+{% endblock content %}

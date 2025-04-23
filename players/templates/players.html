@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Jogadores</title>
+</head>
+<body>
+    <h1>Buscar Jogadores da NBA</h1>
+
+    <form method="get">
+        <input type="text" name="nome" placeholder="Digite o nome do jogador" value="{{ nome }}">
+        <button type="submit">Buscar</button>
+    </form>
+
+    <hr>
+
+    {% if jogadores %}
+        <h2>Resultados para "{{ nome }}":</h2>
+        <ul>
+            {% for jogador in jogadores %}
+            <li class="list-group-item"><a href="{% url 'details' jogador.id %}">{{ jogador.first_name }} {{ jogador.last_name }} </li>
+                <!--<li>
+                    <strong>{{ jogador.first_name }} {{ jogador.last_name }}</strong><br>
+                    Posição: {{ jogador.position|default:"Não informada" }}<br>
+                    Time: {{ jogador.team.full_name|default:"Sem time" }}
+                </li>
+                -->
+            {% endfor %}
+        </ul>
+    {% elif nome %}
+        <p>Nenhum jogador encontrado.</p>
+    {% endif %}
+</body>
+</html>

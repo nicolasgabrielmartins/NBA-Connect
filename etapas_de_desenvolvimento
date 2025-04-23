@@ -1,0 +1,47 @@
+🚀 Etapas para Desenvolvimento
+🧩 Fase 1: Setup inicial
+ Criar repositório no GitHub
+
+ Criar ambiente virtual e instalar Django + DRF
+
+ Configurar estrutura inicial do projeto e apps
+
+ Setup do banco de dados PostgreSQL (local ou cloud)
+
+ Criar README inicial com descrição + instruções básicas
+
+👤 Fase 2: Autenticação
+ Sistema de cadastro e login
+
+ Perfil do usuário
+
+ Favoritos (jogadores/times)
+
+ Upload de imagem de perfil
+
+📡 Fase 3: Integração com API externa (balldontlie.io)
+ Buscar jogadores
+
+ Buscar estatísticas por temporada
+
+ Buscar jogos e resultados
+
+📊 Fase 4: Exibição de estatísticas
+ Página do jogador com estatísticas detalhadas
+
+ Gráfico de desempenho (pontuação, rebotes, assistências, etc.)
+
+ Gráfico de linha com Chart.js (eixo X = jogos / eixo Y = stats)
+
+✉️ Fase 5: Envio de e-mails
+ Sistema de envio de notificações personalizadas
+
+ Escolha de alertas (ex: quando um jogador ultrapassa X pontos)
+
+☁️ Fase 6: Deploy
+ Deploy em plataforma gratuita (Render, Railway ou Heroku)
+
+ Configurar .env e variáveis sensíveis
+
+ Documentar no README como rodar localmente e contribuir
+
