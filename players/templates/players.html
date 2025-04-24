@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Buscar Jogadores</title>
-</head>
-<body>
+{% extends "master.html" %}
+{% block title %} Pagina Principal {% endblock title%}
+{% block content %}
     <h1>Buscar Jogadores da NBA</h1>
 
     <form method="get">
@@ -30,5 +26,4 @@
     {% elif nome %}
         <p>Nenhum jogador encontrado.</p>
     {% endif %}
-</body>
-</html>
+    {% endblock content %}

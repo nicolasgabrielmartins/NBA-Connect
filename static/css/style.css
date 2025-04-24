@@ -1,0 +1,39 @@
+body{
+   background-repeat: no-repeat;
+}
+
+.bg-image {
+   background-image: url(https://i.pinimg.com/originals/79/a3/84/79a384c3c449ad01b0e57e790807b2c0.gif);
+   min-height: 100vh;
+   width: 100%;
+   height: 100vh; /* 100% da altura da viewport */
+   background-color: rgb(0, 0, 0);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: 50%; /* tamanho do gif */
+   
+   /*background-size: cover; /* cobre toda a tela 
+   background-position: center; centraliza a imagem 
+   background-repeat: no-repeat;
+   width: 100%;
+   height: 100vh; /* 100% da altura da viewport */
+}
+
+nav, ul {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 10% 0 10%;
+}
+
+li {
+   display: inline-block;
+   list-style: none;
+   margin: 10px 30px;
+}
+
+nav ul li a {
+   font-family: Arial, Helvetica, sans-serif, Times, serif;
+   color: white;
+   text-decoration: none;
+}
